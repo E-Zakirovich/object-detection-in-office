@@ -12,3 +12,11 @@ video_data = "./data/raw/video/day_2.avi"
 ground_truth = "./data/raw/ground-truth"
 frame_names = "./data/raw/frame-names"
 path_to_processed_data = "./data/processed"
+
+# reproducibility
+seed = 42
+
+# split ratios (must sum to 1.0)
+train_split = 0.8
+validation_split = 0.1
+test_split = 0.1
