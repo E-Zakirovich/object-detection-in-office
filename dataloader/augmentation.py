@@ -9,7 +9,7 @@ train artificial intelligence model.
 
 # load packages
 from torchvision import transforms
-import configs
+import configs as get
 
 
 class Augmentation:
@@ -20,22 +20,14 @@ class Augmentation:
         # transformation code for validation and test data
         result = transforms.Compose([
 
-            # change the size of the image
-            transforms.Resize(
-
-                (
-                    configs.image_size, # amount
-                    configs.image_size # amount
-                )
-            ),
 
             # make a tensor from imported image
             transforms.ToTensor(),
 
             # normalization part
             transforms.Normalize(
-                mean = configs.mean, # mean
-                std = configs.std # std
+                mean = get.mean, # mean
+                std = get.std # std
             )
         ])
 
