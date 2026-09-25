@@ -14,7 +14,7 @@ import os
 
 # I am calling classess
 frame_maker = LoadVideo(get.video_data, get.path_to_processed_data)
-
+load = Load()
 
 def main():
 
@@ -26,11 +26,7 @@ def main():
         n = frame_maker.make_frames()
         print(f"Saved {n} frames")
 
-    
-
-    
-
-
+    train, validation, test = load.data_pipeline()
 
 if __name__ == "__main__":
     main()
