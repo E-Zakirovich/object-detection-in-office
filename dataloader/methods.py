@@ -11,7 +11,7 @@ just simply methods container.
 from torchvision import datasets
 from torch.utils.data import Subset, DataLoader
 from .augmentation import Augmentation
-import configs
+import configs as get
 
 
 class Methods:
@@ -54,8 +54,8 @@ class Methods:
         dataset = DataLoader(
             dataset = subset, # subset
             shuffle = shuffle, # true / false
-            batch_size = configs.batch_size, # the size of batch (here it is 16)
-            num_workers = configs.num_workers, # connection with hardware
+            batch_size = get.batch_size, # the size of batch (here it is 16)
+            num_workers = get.num_workers, # connection with hardware
         )
 
         # return the result
