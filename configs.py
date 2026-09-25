@@ -9,8 +9,8 @@ learning rate, paths and so on.
 
 # path settings
 video_data = "./data/raw/video/day_2.avi"
-ground_truth = "./data/raw/ground-truth"
-frame_names = "./data/raw/frame-names"
+ground_truth = "./data/raw/ground_truth"
+frame_names = "./data/raw/frame_names"
 path_to_processed_data = "./data/processed"
 
 # reproducibility
