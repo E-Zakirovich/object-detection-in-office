@@ -33,5 +33,9 @@ class Methods:
         # i need a list to store file names
         file_names = os.listdir(path)
 
+        # there is a trash file inside of folder, so i need to delete it
+        if ".DS_Store" in file_names:
+            file_names.remove(".DS_Store")
+
         # return the result 
         return file_names
