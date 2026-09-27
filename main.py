@@ -20,15 +20,18 @@ label_maker = LabelMaker()
 class Main:
 
     def __init__(self):
-        self.information = "Office, employee tracker"
+        self.information = "Office, employee tracker \n \n"
 
     def run(self):
         
         print(self.information)
 
+        status = methods.initialize_the_program()
+
+        if not status:
+            return
         
-        
-        print("data found, proceeding...")
+        print("data folder is created, raw data is also available.")
 
 
 
