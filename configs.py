@@ -18,3 +18,7 @@ processed_test_images = "./data/processed/test/images/"
 processed_test_labels = "./data/processed/test/labels"
 ground_truth = "./data/raw/ground_truth"
 video_data = "./data/raw/video"
+
+# image sizes
+width = 1280
+height = 720
