@@ -9,6 +9,7 @@ the project.
 """
 
 # path settings
+data = "./data"
 processed_train_images = "./data/processed/train/images"
 processed_train_labels = "./data/processed/train/labels"
 processed_validation_images = "./data/processed/validation/images"
