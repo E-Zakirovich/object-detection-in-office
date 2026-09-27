@@ -9,8 +9,8 @@ process for different operations.
 
 import os
 import configs as get
-from data_loader.frame_maker import FrameMaker
-from data_loader.label_maker import LabelMaker
+from src.data_loader.frame_maker import FrameMaker
+from src.data_loader.label_maker import LabelMaker
 
 # I am gonna load all imported classes here
 frame_maker = FrameMaker()
@@ -45,3 +45,32 @@ class Methods:
 
         # return the result 
         return file_names
+
+    # this folder will help me to initialize folders if it is not existed
+    def initialize_the_program(self) -> bool:
+
+        folder = os.path.isdir(get.data) # get existance status 
+
+        # checking
+        if not folder:
+            print("I am creating data folder.")
+            self.make_folders()
+
+        # check the existance of files inside of ground truth or videos folder
+        ground_truth = len(os.listdir(get.ground_truth))
+        videos = len(os.listdir(get.video_data))
+
+        # logic
+        if ground_truth != videos:
+            print("Unfortantely, you missed some files in ground truth or videos folder. Please check the data.")
+            return False
+
+        elif ground_truth == 0:
+            print("Please, provide ground truth data.")
+            return False
+
+        elif videos == 0:
+            print("Please, provide video data.")
+            return False
+
+        return True
