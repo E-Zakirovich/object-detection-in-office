@@ -9,6 +9,12 @@ process for different operations.
 
 import os
 import configs as get
+from data_loader.frame_maker import FrameMaker
+from data_loader.label_maker import LabelMaker
+
+# I am gonna load all imported classes here
+frame_maker = FrameMaker()
+label_maker = LabelMaker()
 
 class Methods:
     def __init__(self):
