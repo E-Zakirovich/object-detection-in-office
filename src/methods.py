@@ -73,4 +73,14 @@ class Methods:
             print("Please, provide video data.")
             return False
 
+        # return the result
         return True
+
+    # following method will get data, destination and filename, will make a txt file as labels
+    def write(self, data : list[str], file_name : str, destination : str) -> None:
+
+        full_path = os.path.join(destination, file_name) # get a full path with os library in order to avoid path errors
+
+        # writing the data to destination with a name of file_name
+        with open(destination, "w", encoding = "utf-8") as file: 
+            file.write(" ".join(map(str, data))) # writing 
