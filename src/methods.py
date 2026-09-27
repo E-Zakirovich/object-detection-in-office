@@ -26,3 +26,12 @@ class Methods:
         os.makedirs(get.processed_test_labels, exist_ok=True) # create folder for test labels
         os.makedirs(get.ground_truth, exist_ok=True) # create folder for groud truth
         os.makedirs(get.video_data, exist_ok=True) # create folder for video data
+
+    # following method will help me to get all file names according to given path otherwise empty list
+    def get_names(self, path : str) -> list[str]:
+
+        # i need a list to store file names
+        file_names = os.listdir(path)
+
+        # return the result 
+        return file_names
