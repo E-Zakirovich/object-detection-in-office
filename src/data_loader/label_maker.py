@@ -16,14 +16,15 @@ import configs as get
 methods = Methods()
 
 class LabelMaker:
-    def __init__(self, path):
-        self.labels = methods.get_names(path) # I get all frame names, in order to match image and labels names.
-        self.path = path
+    def __init__(self, frame_path : str, src : str, destination : str):
+        self.labels = methods.get_names(frame_path) # I get all frame names, in order to match image and labels names.
+        self.src = src
+        self.destination = destination
 
     def make_labels(self, destination : str) -> None:
-        labels = [element.split(".")[0] for element in self.labels]
+        labels = [element.split(".")[0] for element in self.labels] # this is frame labels
 
-        ground_truth = loadmat(self.path)
+        ground_truth = loadmat(self.src) # ground truth data
 
         data = ground_truth["labels"][0]
         l = len(data)
