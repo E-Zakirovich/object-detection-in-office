@@ -9,12 +9,7 @@ process for different operations.
 
 import os
 import configs as get
-from src.data_loader.frame_maker import FrameMaker
-from src.data_loader.label_maker import LabelMaker
 
-# I am gonna load all imported classes here
-frame_maker = FrameMaker()
-label_maker = LabelMaker()
 
 class Methods:
     def __init__(self):
@@ -82,5 +77,5 @@ class Methods:
         full_path = os.path.join(destination, file_name) # get a full path with os library in order to avoid path errors
 
         # writing the data to destination with a name of file_name
-        with open(destination, "w", encoding = "utf-8") as file: 
+        with open(full_path, "w", encoding = "utf-8") as file: 
             file.write(" ".join(map(str, data))) # writing 
