@@ -77,5 +77,7 @@ class Methods:
         full_path = os.path.join(destination, file_name) # get a full path with os library in order to avoid path errors
 
         # writing the data to destination with a name of file_name
-        with open(full_path, "w", encoding = "utf-8") as file: 
-            file.write(" ".join(map(str, data))) # writing 
+        with open(full_path, "w") as f:                       # "w", not "a"
+            for box in data:
+                cls, xc, yc, w, h = box
+                f.write(f"{cls} {xc:.6f} {yc:.6f} {w:.6f} {h:.6f}\n")
