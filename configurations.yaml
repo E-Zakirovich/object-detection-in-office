@@ -1,0 +1,11 @@
+path: /Users/macbook/object-detection-in-office
+train: data/processed/train/images
+val: data/processed/train/images
+# test: data/processed/test/images
+
+names:
+  0: Room is empty (the position values are also 0)
+  1: Person is standing/walking
+  2: Person is sitting
+  3: Two or three people are talking to each other
+  4: Person in room has fallen

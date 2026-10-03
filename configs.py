@@ -22,3 +22,9 @@ video_data = "./data/raw/video"
 # image sizes
 width = 1280
 height = 720
+
+# train settigns
+epochs = 1
+batch = 100
+patience = 20
+num_workers = 2

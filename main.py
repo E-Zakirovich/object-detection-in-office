@@ -9,6 +9,7 @@ This file will connect all methods each other.
 from src.methods import Methods
 from src.data_loader.label_maker import LabelMaker
 from src.data_loader.frame_maker import FrameMaker
+from src.train.train import Train
 import configs as get
 import os
 
@@ -16,6 +17,10 @@ import os
 methods = Methods()
 labels = LabelMaker()
 frames = FrameMaker()
+train = Train(
+    "configurations.yaml",
+    "yolo11n.pt"
+)
 
 class Main:
 
@@ -62,6 +67,9 @@ class Main:
 
             labels.make_labels(path_l, path_v, get.ground_truth + "/" + labels_of_ground_truth[i])
 
+        # start training
+        
+        train.run()
 
 project = Main()
 
